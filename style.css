@@ -1,0 +1,444 @@
+/* Reset e configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações gerais do body, incluindo fonte, linha e cor de texto, com fundo neutro sólido (sem imagem pra não cobrir header/nav) */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa; /* Fundo neutro sólido pro header/nav e footer */
+    position: relative;
+}
+
+/* Wrapper pro conteúdo principal com background das tintas (começa exatamente abaixo do header/nav) */
+.main-content {
+    background-image: url('assets/img/fundo.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; /* Muda de fixed para scroll, pra imagem começar no topo do main, não da viewport */
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Altura mínima pra cobrir o conteúdo */
+    position: relative;
+}
+
+/* Overlay semi-opaco só no main-content (não afeta header/nav) */
+.main-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(248, 249, 250, 0.9); /* Opacidade ajustada pra legibilidade - só no conteúdo */
+    z-index: 0; /* Baixo, pra seções ficarem por cima */
+}
+
+/* Header - Define o estilo do cabeçalho com gradiente inspirado na marca Coral (sólido, acima de tudo) */
+header {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 20; /* Muito alto, pra ficar acima de qualquer overlay e visível */
+}
+
+/* Estilo do título principal no header */
+header h1 {
+    font-size: 3.5em; /* Mantém o tamanho, mas a logo se ajusta automaticamente */
+    margin-bottom: 10px;
+    text-align: center; /* Centraliza a logo */
+    text-shadow: none; /* Remove sombra se a logo for imagem */
+}
+
+/* Logo dentro do h1 - responsiva e com sombra sutil se quiser */
+header h1 img {
+    width: 120px;
+    height: auto; /* Mantém a proporção */
+    display: block;
+    margin: 0 auto; /* Centraliza */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra leve */
+}
+
+/* Estilo do parágrafo no header */
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Navegação - Define o menu de navegação com fundo escuro (sólido, acima de tudo) */
+nav {
+    background-color: #333; /* Fundo preto sólido */
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 20; /* Muito alto, igual ao header */
+}
+
+/* Estilo dos links de navegação */
+nav a {
+    color: #fff;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Efeito hover nos links de navegação */
+nav a:hover {
+    color: #007bff; /* Hover em tom azul */
+}
+
+/* Seções - Configurações gerais para todas as seções, com fundo semi-transparente pra legibilidade sobre o background */
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95); /* Branco semi-opaco só nas seções */
+    position: relative;
+    z-index: 1; /* Médio, acima do overlay do main-content */
+}
+
+/* Seção #home - Estilo para a seção inicial, com fundo transparente pra não ter retângulo branco */
+#home {
+    background-color: transparent;
+    text-align: center;
+    border-bottom: none;
+}
+
+/* Título da seção #home */
+#home h2 {
+    color: #007bff; /* Título em tom azul */
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* Parágrafo da seção #home */
+#home p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Seção #about - Estilo para a seção "Sobre Nós" */
+#about {
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+/* Título da seção #about */
+#about h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* Parágrafo da seção #about */
+#about p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+/* Seção #services - Estilo para a seção de serviçoso */
+#services {
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Título da seção #services */
+#services h2 {
+    color: #007bff; /* Título em tom azul */
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+/* Itens de serviço - Estilo para os cards de serviços */
+.service-item {
+    display: inline-block;
+    width: 30%;
+    margin: 1.5%;
+    background: linear-gradient(135deg, #fff, #f8f9fa);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    vertical-align: top;
+}
+
+/* Efeito hover nos itens de serviço */
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Título dos itens de serviço */
+.service-item h3 {
+    color: #007bff; /* Título em tom azul */
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+/* Parágrafo dos itens de serviço */
+.service-item p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Seção #novidades - Estilo geral, com título centralizado e maior */
+#novidades {
+    background-color: #f8f9fa; /* Fundo cinza claro pra variar */
+    text-align: center; /* Centraliza todo o conteúdo da seção */
+}
+
+/* Título da seção #novidades - Maior e centralizado */
+#novidades h2 {
+    color: #007bff; /* Azul pra combinar com o tema */
+    margin-bottom: 20px;
+    font-size: 2.5em; /* Maior que o padrão (era 2em) */
+    text-align: center; /* Garante centralização */
+}
+
+/* Parágrafo da seção #novidades */
+#novidades p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px; /* Centralizado com margem inferior pro vídeo */
+    text-align: justify; /* Justificado pra texto fluir */
+}
+
+/* Vídeo na seção #novidades - Menor e centralizado */
+#novidades .video-container {
+    max-width: 50%; /* Diminuí mais pra largura menor */
+    max-height: 300px; /* Limite de altura pra caber na tela  */
+    margin: 30px auto; /* Centralizado */
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    background: #f8f9fa;
+}
+
+/* Estilo do vídeo dentro do container - Mantém proporção, mas respeita a altura max */
+#novidades .video-container video {
+    width: 100%;
+    max-height: 100%; /* Limita a altura do vídeo pro container */
+    height: auto;
+    display: block;
+    object-fit: contain; /* Proporção sem esticar */
+    image-rendering: auto;
+    border-radius: 15px;
+}
+
+/* Seção #contact - Estilo para a seção de contato, com fundo cinza claro */
+#contact {
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+/* Título da seção #contact */
+#contact h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* Parágrafo da seção #contact */
+#contact p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+/* Formulário - Configurações gerais para o formulário de contato */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo para inputs e textarea do formulário */
+form input,
+form textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+/* Efeito focus nos inputs e textarea */
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #007bff; /* Focus em tom azul */
+}
+
+/* Estilo do botão do formulário */
+form button {
+    padding: 15px;
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Gradiente azul no botão */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+/* Efeito hover no botão do formulário */
+form button:hover {
+    opacity: 0.9;
+}
+
+/* Footer - Estilo para o rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+/* Responsividade - Ajustes para telas menores (mobile) */
+@media (max-width: 768px) {
+    /* Título do header menor em mobile */
+    header h1 {
+        font-size: 2em;
+    }
+
+    header h1 img {
+        max-width: 200px; /* Ainda menor no celular */
+    }
+    
+    /* Links de nav em bloco em mobile */
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    /* Itens de serviço em largura total em mobile */
+    .service-item {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    /* Padding reduzido nas seções em mobile */
+    section {
+        padding: 40px 15px;
+    }
+
+    /* Container do vídeo menor em mobile */
+    .video-container {
+        max-width: 50%; /* Ainda menor no mobile */
+        margin: 20px auto;
+    }
+    
+    /* Vídeo cobre a área em mobile */
+    .video-container video {
+        object-fit: cover; /* No mobile, cobre a área pra preencher melhor */
+    }
+
+    /* Responsividade pro vídeo de novidades no mobile */
+    #novidades .video-container {
+        max-width: 80%; /* Um pouco maior no mobile, mas ainda compacto */
+        max-height: 250px; /* Altura menor no celular pra caber fácil */
+        margin: 20px auto;
+    }
+    
+    #novidades h2 {
+        font-size: 2em; /* Levemente menor no mobile pra caber */
+    }
+}
+
+/* Animações suaves - Navegação suave ao rolar a página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Container para o vídeo */
+.video-container {
+    max-width: 70%; /* Reduzido para não ficar gigante */
+    max-width: 800px; /* Limite fixo no desktop */
+    margin: 30px auto; /* Centralizado com espaçamento */
+    overflow: hidden;
+    border-radius: 15px; /* Bordas mais arredondadas pra ficar bonito */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15); /* Sombra mais suave */
+    background: #f8f9fa; /* Fundo neutro se o vídeo tiver transparência */
+}
+
+/* Estilo do vídeo dentro do container */
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* Mantém proporção sem esticar */
+    image-rendering: auto; /* Suaviza pixels em baixa resolução */
+    border-radius: 15px; /* Arredonda o vídeo também */
+}
+
+/* Seção #novidades - Estilo geral*/
+#novidades {
+    background-color: #f8f9fa; /* Fundo cinza claro pra variar */
+    text-align: center; /* Centraliza todo o conteúdo da seção */
+}
+
+/* Título da seção #novidades - Maior e centralizado */
+#novidades h2 {
+    color: #007bff; /* Azul pra combinar com o tema */
+    margin-bottom: 20px;
+    font-size: 2.5em; /* Maior que o padrão (era 2em) */
+    text-align: center; /* Garante centralização */
+}
+
+/* Parágrafo da seção #novidades */
+#novidades p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px; /* Centralizado com margem inferior pro vídeo */
+    text-align: justify; /* Justificado pra texto fluir */
+}
+
+/* Vídeo na seção  */
+#novidades .video-container {
+    max-width: 50%; /* Diminuí mais pra largura menor */
+    max-height: 800px; /* Limite de altura pra caber na tela */
+    margin: 30px auto; /* Centralizado */
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    background: #f8f9fa;
+}
+
+/* Estilo do vídeo dentro do container - Mantém proporção, mas respeita a altura max */
+#novidades .video-container video {
+    width: 100%;
+    max-height: 100%; /* Limita a altura do vídeo pro container */
+    height: auto;
+    display: block;
+    object-fit: contain; /* Proporção sem esticar */
+    image-rendering: auto;
+    border-radius: 15px;
+}
+
+/* Responsividade pro vídeo de novidades no mobile */
+@media (max-width: 768px) {
+    #novidades .video-container {
+        max-width: 80%; /* Um pouco maior no mobile, mas ainda compacto */
+        max-height: 250px; /* Altura menor no celular pra caber fácil */
+        margin: 20px auto;
+    }
+    
+    #novidades h2 {
+        font-size: 2em; /* Levemente menor no mobile pra caber */
+    }
+}

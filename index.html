@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espinosa Tintas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <img src="assets/img/cropped_circle_image.png" alt="Espinosa Tintas" style="max-width: 100%; height: auto; width: 160px; display: block; margin: 0 auto;">
+    </header>
+
+    <nav>
+        <a href="#home">Início</a>
+        <a href="#about">Sobre</a>
+        <a href="#services">Serviços</a>
+        <a href="#novidades">Novidades</a>
+        <a href="#contact">Contato</a>
+    </nav>
+
+    <main class="main-content">
+        <section id="home">
+            <h2>Bem-vindo</h2>
+            <p>Descubra a melhor seleção de produtos e acabamentos para todos os seus projetos de construção e reforma.</p>
+            
+            <!-- Vídeo em looping -->
+            <div class="video-container">
+                <video autoplay loop muted playsinline>
+                    <source src="assets/video/video.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>Sobre Nós</h2>
+            <p>A Espinosa Tintas, fundada em 1992 em Palestina (SP), é referência em soluções para construção e acabamento. Oferecemos os melhores produtos para sua obra, incluindo tintas de alta qualidade da Coral, materiais como cimentos, ferragens e ferramentas, além de itens para acabamento como vernizes e massas. Com mais de 30 anos de tradição, priorizamos atendimento personalizado e preços acessíveis para reformas residenciais e projetos comerciais.</p>
+        </section>
+
+        <section id="services">
+            <h2>Nossos Serviços</h2>
+            <div class="service-item">
+                <h3>Tintas para Interiores</h3>
+                <p>Linhas Coral exclusivas para ambientes internos, com acabamentos matte, acetinado e brilhante para uma pintura perfeita.</p>
+            </div>
+            <div class="service-item">
+                <h3>Tintas para Exteriores</h3>
+                <p>Proteção duradoura contra intempéries com as tintas Coral resistentes a UV e umidade.</p>
+            </div>
+            <div class="service-item">
+                <h3>Materiais Básicos e de Acabamento</h3>
+                <p>Ampla variedade de vernizes, massas corrida, ferragens, cimentos e ferramentas essenciais para construção e finalização de projetos.</p>
+            </div>
+        </section>
+
+        <section id="novidades">
+            <h2>Novidades</h2>
+            <p>Descubra nossa nova máquina de tintas Coral, que permite misturar cores personalizadas com precisão e qualidade superior. Com tecnologia avançada, ela facilita a escolha de tons exatos para o seu projeto, economizando tempo e garantindo resultados profissionais. Veja como ela funciona!</p>
+            
+            <!-- Vídeo da máquina Coral em looping -->
+            <div class="video-container">
+                <video autoplay loop muted playsinline>
+                    <source src="assets/video/v3572.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco para mais informações sobre nossos produtos Coral: espinosatintas@hotmail.com | WhatsApp: (17) 99178-5083</p>
+            <form>
+                <input type="text" placeholder="Seu Nome" required>
+                <input type="email" placeholder="Seu Email" required>
+                <textarea placeholder="Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Espinosa Tintas. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Script simples para navegação suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
